@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+	/* Primary */
+  --color-primary-100: #FAEFFF;
+  --color-primary-200: #F5DFFF;
+  --color-primary-300: #EFD0FF;
+  --color-primary-400: #EAC0FF;
+  --color-primary-500: #E5B0FF;
+  --color-primary-600: #B78DCC;
+  --color-primary-700: #896A99;
+  --color-primary-800: #5C4666;
+  --color-primary-900: #2E2333;
+  /* Neutral */
+  --color-neutral-100: #D3D3D3;
+  --color-neutral-200: #A7A7A7;
+  --color-neutral-300: #7A7A7A;
+  --color-neutral-400: #4E4E4E;
+  --color-neutral-500: #222222;
+  --color-neutral-600: #1B1B1B;
+  --color-neutral-700: #141414;
+  --color-neutral-800: #0E0E0E;
+  --color-neutral-900: #070707;
+}
+
+@layer base {
+  /* 브라우저 자동완성(autofill) 배경/글자색이 filled 스타일을 덮지 않도록 무력화 */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--color-neutral-500);
+    -webkit-box-shadow: 0 0 0 1000px transparent inset;
+    box-shadow: 0 0 0 1000px transparent inset;
+    transition: background-color 9999s ease-in-out 0s;
+    caret-color: var(--color-neutral-500);
+  }
+}
+
+@layer components {
+  /* Text styles */
+  .title-lg {
+    @apply text-5xl font-semibold leading-[1.2];
+  }
+  .title-md {
+    @apply text-4xl font-semibold leading-[1.2];
+  }
+  .title-sm {
+    @apply text-2xl font-semibold leading-[1.3];
+  }
+  .body-lg {
+    @apply text-lg font-semibold leading-[1.4];
+  }
+  .body-md {
+    @apply text-base font-normal leading-[1.4];
+  }
+  .body-sm {
+    @apply text-sm font-normal leading-[1.4];
+  }
+  .caption {
+    @apply text-xs font-normal leading-[1.4];
+  }
+}
